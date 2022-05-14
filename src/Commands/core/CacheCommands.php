@@ -223,7 +223,7 @@ class CacheCommands extends DrushCommands implements CustomEventAwareInterface, 
         // We no longer clear APC and similar caches as they are useless on CLI.
         // See https://github.com/drush-ops/drush/pull/2450
 
-        $autoloader = $this->loadDrupalAutoloader(DRUPAL_ROOT);
+        $autoloader = $this->loadDrupalAutoloader($root);
         require_once DRUSH_DRUPAL_CORE . '/includes/utility.inc';
 
         $request = Drush::bootstrap()->getRequest();
